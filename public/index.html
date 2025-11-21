@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -25,17 +25,19 @@
         }
 
         .header {
-            background: white;
+            background: #0f3460;
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #1a5490;
         }
 
         h1 {
-            color: #667eea;
+            color: #00d4ff;
             text-align: center;
             margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
         .setup-section {
@@ -49,14 +51,21 @@
             flex: 1;
             min-width: 200px;
             padding: 12px;
-            border: 2px solid #ddd;
+            border: 2px solid #1a5490;
             border-radius: 8px;
             font-size: 14px;
+            background: #16213e;
+            color: #fff;
+        }
+
+        .setup-section input::placeholder {
+            color: #8b9dc3;
         }
 
         .setup-section input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
         .btn {
@@ -81,18 +90,21 @@
         }
 
         .btn-primary {
-            background: #667eea;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
             color: white;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
         }
 
         .btn-success {
-            background: #00b894;
-            color: white;
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            color: #1a1a2e;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
         }
 
         .btn-danger {
-            background: #d63031;
+            background: linear-gradient(135deg, #ff4757, #cc3649);
             color: white;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
         }
 
         .status {
@@ -104,29 +116,32 @@
         }
 
         .status.connected {
-            background: #d4edda;
-            color: #155724;
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            border: 1px solid #00ff88;
         }
 
         .status.disconnected {
-            background: #fee;
-            color: #c33;
+            background: rgba(255, 71, 87, 0.2);
+            color: #ff4757;
+            border: 1px solid #ff4757;
         }
 
         .room-info {
-            background: #f8f9fa;
+            background: rgba(26, 84, 144, 0.3);
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
+            border: 1px solid #1a5490;
         }
 
         .room-info p {
             margin: 5px 0;
-            color: #555;
+            color: #8b9dc3;
         }
 
         .room-info strong {
-            color: #667eea;
+            color: #00d4ff;
         }
 
         .participants-grid {
@@ -137,51 +152,55 @@
         }
 
         .participant-card {
-            background: white;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
             transition: all 0.3s;
+            border: 1px solid #1a5490;
         }
 
         .participant-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+            border-color: #00d4ff;
         }
 
         .participant-card.self {
-            border: 3px solid #667eea;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
 
         .participant-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
             font-size: 36px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
         .participant-name {
             font-size: 18px;
             font-weight: 600;
-            color: #333;
+            color: #fff;
             margin-bottom: 10px;
         }
 
         .participant-status {
             font-size: 14px;
-            color: #00b894;
+            color: #00ff88;
             font-weight: 500;
         }
 
         .volume-indicator {
             height: 6px;
-            background: #e0e0e0;
+            background: rgba(26, 84, 144, 0.5);
             border-radius: 3px;
             margin-top: 10px;
             overflow: hidden;
@@ -189,18 +208,20 @@
 
         .volume-level {
             height: 100%;
-            background: linear-gradient(90deg, #00b894, #00cec9);
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
             width: 0%;
             transition: width 0.1s;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
         }
 
         .controls {
-            background: white;
+            background: #0f3460;
             border-radius: 15px;
             padding: 20px;
             margin-top: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #1a5490;
         }
 
         .controls .btn {
@@ -216,7 +237,7 @@
         }
 
         .instructions {
-            background: #fff3cd;
+            background: rgba(255, 193, 7, 0.1);
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
@@ -224,13 +245,17 @@
         }
 
         .instructions h3 {
-            color: #856404;
+            color: #ffc107;
             margin-bottom: 10px;
         }
 
         .instructions ol {
             margin-left: 20px;
-            color: #856404;
+            color: #8b9dc3;
+        }
+
+        .instructions p {
+            color: #8b9dc3;
         }
     </style>
 </head>
